@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/Task-Monitor", {
+mongoose.connect("mongodb+srv://rimmanuvel12:Immanuvel%4012@cluster0.6ncy0.mongodb.net/Task-Monitor?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
@@ -208,7 +208,7 @@ app.get('/api/stats', authenticateToken, async (req, res) => {
     // Category distribution
     const categoryDistribution = await Task.aggregate([
       {
-        $match: { userId: mongoose.Types.ObjectId(userId) }
+        $match: { userId: new mongoose.Types.ObjectId(userId) }
       },
       {
         $group: {
@@ -238,6 +238,7 @@ app.get('/api/stats', authenticateToken, async (req, res) => {
     res.status(500).json({ message: 'Error fetching statistics' });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

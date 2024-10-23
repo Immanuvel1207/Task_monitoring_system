@@ -1,0 +1,94 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000; /* Dark background for neon effect */
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .auth-container h2 {
+    font-size: 2rem;
+    color: #1abc9c; /* Neon green for heading */
+    text-shadow: 0 0 10px #1abc9c, 0 0 20px #1abc9c, 0 0 30px #1abc9c;
+    margin-bottom: 20px;
+  }
+  
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .auth-container input {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #3498db; /* Neon blue border */
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .auth-container input:focus {
+    outline: none;
+    border-color: #e67e22; /* Neon orange focus */
+    box-shadow: 0 0 8px #e67e22;
+  }
+  
+  .auth-container button {
+    background-color: #2ecc71; /* Neon green */
+    color: #000;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 0 0 8px #2ecc71;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .auth-container button:hover {
+    background-color: #27ae60; /* Darker neon green on hover */
+    box-shadow: 0 0 10px #27ae60, 0 0 20px #27ae60;
+  }
+  
+  .auth-container p {
+    margin-top: 15px;
+    color: #f39c12; /* Neon yellow for text */
+    font-size: 1rem;
+  }
+  
+  .auth-container p a {
+    color: #e74c3c; /* Neon red for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .auth-container p a:hover {
+    color: #ff6b6b;
+    text-shadow: 0 0 8px #ff6b6b;
+  }
+
+  @media (max-width: 768px) {
+    .login-container {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    .login-container h2 {
+      font-size: 20px;
+    }
+  
+    .login-container input, .login-container button {
+      font-size: 14px;
+    }
+  }
+  
