@@ -38,10 +38,10 @@ export default function Dashboard() {
     try {
       const token = localStorage.getItem('token');
       const [statsResponse, tasksResponse] = await Promise.all([
-        fetch('http://localhost:5000/api/stats', {
+        fetch('https://task-monitoring-system.onrender.com/api/stats', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        fetch('http://localhost:5000/tasks', {
+        fetch('https://task-monitoring-system.onrender.com/tasks', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);

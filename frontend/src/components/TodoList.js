@@ -20,7 +20,7 @@ const TodoList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axiosInstance.get('http://localhost:5000/tasks');
+      const response = await axiosInstance.get('https://task-monitoring-system.onrender.com/tasks');
       setTasks(response.data);
     } catch (error) {
       if (error.response?.status === 401) {
@@ -68,7 +68,7 @@ const addTask = async () => {
       return;
     }
     try {
-      const response = await axiosInstance.post('http://localhost:5000/tasks', taskForm);
+      const response = await axiosInstance.post('https://task-monitoring-system.onrender.com/tasks', taskForm);
       setTasks([...tasks, response.data]);
       toast.success('Task added successfully!');
       setTaskForm({ name: '', deadline: '', category: 'general' });
@@ -84,7 +84,7 @@ const addTask = async () => {
 
     try {
       const response = await axiosInstance.put(
-        `http://localhost:5000/tasks/${editingTask.id}`,
+        `https://task-monitoring-system.onrender.com/tasks/${editingTask.id}`,
         {
           name: editingTask.name,
           deadline: editingTask.deadline || null,
@@ -102,7 +102,7 @@ const addTask = async () => {
   };
   const deleteTask = async (id) => {
     try {
-      await axiosInstance.delete(`http://localhost:5000/tasks/${id}`);
+      await axiosInstance.delete(`https://task-monitoring-system.onrender.com/tasks/${id}`);
       setTasks(tasks.filter((t) => t._id !== id));
       toast.success('Task deleted successfully!');
     } catch (error) {
@@ -113,7 +113,7 @@ const addTask = async () => {
   const toggleCompletion = async (id) => {
     try {
       const taskToUpdate = tasks.find(t => t._id === id);
-      const response = await axiosInstance.put(`http://localhost:5000/tasks/${id}`, {
+      const response = await axiosInstance.put(`https://task-monitoring-system.onrender.com/tasks/${id}`, {
         ...taskToUpdate,
         completed: !taskToUpdate.completed
       });
