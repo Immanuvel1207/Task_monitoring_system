@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://rimmanuvel12:Immanuvel%4012@cluster0.6ncy0.mongodb.net/Task-Monitor?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
